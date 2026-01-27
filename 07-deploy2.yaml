@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-web-color
+  namespace: blue
+spec:
+  selector:
+    matchLabels:
+      app: web-color
+  template:
+    metadata:
+      labels:
+        app: web-color
+    spec:
+      containers:
+        - name: web-color
+          image: kubedevio/web-color:blue
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-web-color
+  namespace: green
+spec:
+  selector:
+    matchLabels:
+      app: web-color
+  template:
+    metadata:
+      labels:
+        app: web-color
+    spec:
+      containers:
+        - name: web-color
+          image: kubedevio/web-color:green
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
