@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: replicaset
+spec:
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec:
+      containers:
+        - name: web-color
+          image: kubedevio/web-color:blue
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
