@@ -1,7 +1,7 @@
-#Autor: Fagner Geraldes
-#Data de criação: 27/01/2026
-#Data de atualização: 27/01/2026
-#Versão: 0.01
+#Autor: Fagner Geraldes  
+#Data de criação: 27/01/2026  
+#Data de atualização: 27/01/2026  
+#Versão: 0.01  
 
 ### Namespaces
 

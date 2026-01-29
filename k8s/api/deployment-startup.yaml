@@ -22,17 +22,27 @@ spec:
               containerPort: 443
               protocol: TCP
           imagePullPolicy: Always
+          startupProbe:
+            httpGet:
+              path: /health
+              port: 80
+              scheme: HTTP
+            periodSeconds: 10
+            failureThreshold: 10
+          envFrom:
+            - configMapRef:
+                name: api-configmap
           env:
-            - name: Mongo_Host
-              value: "mongo-service"
             - name: Mongo_User
-              value: mongouser
+              valueFrom:
+                secretKeyRef:
+                  key: MONGO_INITDB_ROOT_USERNAME
+                  name:  mongodb-secret
             - name: Mongo_Password
-              value: mongopwd
-            - name: Mongo_Port
-              value: "27017"
-            - name: Mongo_Database
-              value: "admin"
+              valueFrom:
+                secretKeyRef:
+                  key: MONGO_INITDB_ROOT_PASSWORD
+                  name: mongodb-secret
 ---
 apiVersion: v1
 kind: Service
@@ -50,4 +60,4 @@ spec:
       protocol: TCP
       port: 443
       targetPort: 443
-  type: NodePort
+  type: NodePort   
