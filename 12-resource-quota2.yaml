@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: object-resource
+spec:
+  hard:
+    pods: "12"

@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        lifecycle:
+          postStart:
+            exec:
+              command: ["/bin/sh", "-c", "curl -X POST https://webhook.site/3f6b33db-cbc0-4a95-842b-633fe91b6645 -d 'Post_Start_Exec'"]
+          preStop:
+            exec:
+              command: ["/bin/sh", "-c", "curl -X POST https://webhook.site/3f6b33db-cbc0-4a95-842b-633fe91b6645 -d 'Pre_Stop_Exec'"]
+        resources:
+          limits:
+            cpu: "500m"
+            memory: "32Mi"
+        ports:
+         - containerPort: 80
