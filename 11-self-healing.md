@@ -1,11 +1,11 @@
-#Autor: Fagner Geraldes  
-#Data de criação: 28/01/2026  
-#Data de atualização: 28/01/2026  
-#Versão: 0.01  
+# Self Healing
 
-### Self Healing
+**Autor:** Fagner Geraldes  
+**Data de criação:** 28/01/2026  
+**Data de atualização:** 28/01/2026  
+**Versão:** 0.01  
 
-### Liveness Probe
+## Liveness Probe
 
 ```bash
 k3d cluster create meucluster --servers 3 --agents 3
@@ -25,7 +25,7 @@ watch 'kubectl get all'
 kubectl delete -f ./k8s/api/deployment-liveness.yaml
 ```
 
-### Readiness Probe
+## Readiness Probe
 
 ```bash
 kubectl apply -f ./k8s/api/deployment-readiness.yaml
@@ -40,7 +40,7 @@ watch 'kubectl get all'
 kubectl delete -f ./k8s/api/deployment-readiness.yaml
 ```
 
-### Startup Probe
+## Startup Probe
 
 ```bash
 kubectl apply -f ./k8s/api/deployment-startup.yaml

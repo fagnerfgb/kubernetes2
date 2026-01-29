@@ -1,11 +1,11 @@
-#Autor: Fagner Geraldes  
-#Data de criação: 29/01/2026  
-#Data de atualização: 29/01/2026  
-#Versão: 0.01  
+# Gerenciamento de Recursos de aplicações e de ambientes
 
-### Gerenciamento de Recursos de aplicações e de ambientes
+**Autor:** Fagner Geraldes  
+**Data de criação:** 29/01/2026  
+**Data de atualização:** 29/01/2026  
+**Versão:** 0.01  
 
-### Resource Request e Resource Limits
+## Resource Request e Resource Limits
 
 ```bash
 k3d cluster create meucluster --servers 3 --agents 3 -p "30000:30000@loadbalancer"
@@ -17,7 +17,7 @@ curl --data "megabytes=80&durationSec=30" http://localhost:30000/ConsumeMem && c
 kubectl delete -f 12-resource.yaml
 ```
 
-### Horizontal Pod AutoScaler
+## Horizontal Pod AutoScaler
 
 ```bash
 kubectl apply -f 12-hpa.yaml
@@ -25,7 +25,7 @@ kubectl apply -f 12-resource.yaml
 curl --data "millicores=400&durationSec=120" http://localhost:30000/ConsumeCPU && watch 'kubectl top pods && kubectl get pods && kubectl get hpa'
 ```
 
-### Quality of Service
+## Quality of Service
 
 ```bash
 kubectl describe $(kubectl get pod -o name) | grep "QoS Class:"
@@ -52,7 +52,7 @@ kubectl delete -f ./k8s/mongodb/deployment4.yaml
 kubectl delete -f ./k8s/api/deployment4.yaml
 ```
 
-### Limit Range
+## Limit Range
 
 ```bash
 kubectl apply -f 12-limit-range.yaml
@@ -69,7 +69,7 @@ kubectl delete -f 12-deployment2.yaml
 kubectl delete -f 12-limit-range.yaml
 ```
 
-### Resource Quota
+## Resource Quota
 
 ```bash
 kubectl apply -f 12-resource-quota.yaml

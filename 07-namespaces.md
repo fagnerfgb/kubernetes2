@@ -1,9 +1,9 @@
-#Autor: Fagner Geraldes  
-#Data de criação: 27/01/2026  
-#Data de atualização: 27/01/2026  
-#Versão: 0.01  
+# Namespaces
 
-### Namespaces
+**Autor:** Fagner Geraldes  
+**Data de criação:** 27/01/2026  
+**Data de atualização:** 27/01/2026  
+**Versão:** 0.01  
 
 ```bash
 k3d cluster create meucluster --servers 3 --agents 3
@@ -39,7 +39,6 @@ kubectl get pod --all-namespaces -o wide
 kubectl run -it --image kubedevio/ubuntu-curl ping-test2 --restart=Never --rm -- /bin/bash
 ```
 
-
 ```bash
 curl http://10.42.2.5
 curl http://10.42.6.3
@@ -60,7 +59,7 @@ exit
 
 ```bash
 kubectl delete -f 07-service-blue.yaml
-kubectl delete -f 07-service-green.yaml
+kubectl delete -f###  07-service-green.yaml
 kubectl delete -f 07-service.yaml -n blue
 kubectl delete -f 07-service.yaml -n green
 kubectl delete -f 07-deploy-blue.yaml -n blue

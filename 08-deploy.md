@@ -1,9 +1,9 @@
-#Autor: Fagner Geraldes  
-#Data de criação: 27/01/2026  
-#Data de atualização: 27/01/2026  
-#Versão: 0.01  
+# Deploy
 
-### Deploy
+**Autor:** Fagner Geraldes  
+**Data de criação:** 27/01/2026  
+**Data de atualização:** 27/01/2026  
+**Versão:** 0.01  
 
 ```bash
 git clone https://github.com/KubeDev/pedelogo-catalogo.git

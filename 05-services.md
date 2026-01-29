@@ -1,11 +1,11 @@
-#Autor: Fagner Geraldes  
-#Data de criação: 26/01/2026  
-#Data de atualização: 26/01/2026  
-#Versão: 0.01  
+# Services
 
-### Services
+**Autor:** Fagner Geraldes  
+**Data de criação:** 26/01/2026  
+**Data de atualização:** 26/01/2026  
+**Versão:** 0.01  
 
-### ClusterIP
+## ClusterIP
 
 ```bash
 k3d cluster create meucluster --servers 3 --agents 3 -p "30000:30000@loadbalancer"
@@ -34,7 +34,7 @@ kubectl scale deployment deployment --replicas 10 && watch 'kubectl get svc,po'
 kubectl delete -f 05-service-clusterip.yaml
 ```
 
-### NodePort
+## NodePort
 
 ```bash
 kubectl apply -f 05-service-nodeport.yaml && watch 'kubectl get svc,po'
@@ -57,7 +57,7 @@ curl http://172.19.0.2:30000
 exit
 ```
 
-### LoadBalancer
+## LoadBalancer
 
 ```bash
 kubectl delete -f 05-service-nodeport.yaml
@@ -66,7 +66,7 @@ kubectl get service web-service
 kubectl delete -f 05-service-loadbalancer.yaml
 ```
 
-### ExternalName
+## ExternalName
 
 ```bash
 kubectl apply -f 05-service-externalname.yaml && watch 'kubectl get svc,po'

@@ -1,11 +1,11 @@
-#Autor: Fagner Geraldes  
-#Data de criação: 29/01/2026  
-#Data de atualização: 29/01/2026  
-#Versão: 0.01  
+# Ciclo de vida de um pod
 
-### Ciclo de vida de um pod
+**Autor:** Fagner Geraldes  
+**Data de criação:** 29/01/2026  
+**Data de atualização:** 29/01/2026  
+**Versão:** 0.01  
 
-### PostStart e PreStop
+## PostStart e PreStop
 
 ```bash
 k3d cluster create meucluster --servers 3 --agents 3 -p "30000:30000@loadbalancer"
@@ -18,7 +18,7 @@ kubectl get pods
 kubectl delete -f 13-deployment2.yaml
 ```
 
-### Init Container
+## Init Container
 
 ```bash
 kubectl apply -f 13-deployment3.yaml

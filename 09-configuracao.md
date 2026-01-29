@@ -1,9 +1,11 @@
-#Autor: Fagner Geraldes  
-#Data de criação: 28/01/2026  
-#Data de atualização: 28/01/2026  
-#Versão: 0.01  
+# ConfigMap e Secret
 
-### ConfigMap por referencia
+**Autor:** Fagner Geraldes  
+**Data de criação:** 28/01/2026  
+**Data de atualização:** 28/01/2026  
+**Versão:** 0.01  
+
+## ConfigMap por referencia
 
 ```bash
 k3d cluster create meucluster --servers 3 --agents 3
@@ -24,7 +26,7 @@ kubectl delete -f ./k8s/mongodb/deployment2.yaml
 kubectl delete -f ./k8s/api/deployment.yaml
 ```
 
-### ConfigMap por referencia e por valor
+## ConfigMap por referencia e por valor
 
 ```bash
 kubectl apply -f ./k8s/api/api-configmap.yaml
@@ -44,7 +46,7 @@ kubectl delete -f ./k8s/api/deployment2.yaml
 kubectl delete -f ./k8s/api/api-configmap.yaml
 ```
 
-### Secret
+## Secret
 
 ```bash
 echo -n "mongouser" | base64
@@ -68,7 +70,7 @@ kubectl delete -f ./k8s/mongodb/mongodb-secret.yaml
 kubectl delete -f ./k8s/api/api-configmap.yaml
 ```
 
-### Linha de comando
+## Linha de comando
 
 ```bash
 kubectl create configmap literal-configmap --from-literal=Mongo_Host=mongo-service
